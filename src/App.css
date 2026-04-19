@@ -1,60 +1,45 @@
 /* Configuración General */
 .App {
   text-align: center;
-  background-color: #212529; /* Fondo oscuro de la imagen 2 */
+  font-family: Arial, sans-serif;
+  /* Quitamos el fondo oscuro y el flex de aquí */
+}
+
+/* NUEVA CLASE: Solo para Inicio y Descargas */
+.dark-layout {
+  background-color: #212529; 
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
 }
 
-/* Pantalla de Inicio */
-.App-logo-static {
-  height: 200px;
-  margin-bottom: 20px;
-}
-
+/* Pantalla de Inicio (Sin cambios) */
+.App-logo-static { height: 200px; margin-bottom: 20px; }
 .title { font-size: 2.5rem; margin-bottom: 10px; }
 .subtitle { font-size: 1.8rem; font-weight: normal; margin-bottom: 30px; }
-
 .links-container { display: flex; flex-direction: column; gap: 15px; }
-
 .text-link, .text-link-btn {
-  color: #00a8e8;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
+  color: #00a8e8; text-decoration: underline; background: none;
+  border: none; font-size: 1.1rem; cursor: pointer;
 }
 
-/* Centro de Descargas (Tarjeta blanca) */
+/* Centro de Descargas (Sin cambios en la tarjeta) */
 .download-card {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  color: #333;
-  width: 90%;
-  max-width: 500px;
+  background: white; padding: 40px; border-radius: 15px;
+  color: #333; width: 90%; max-width: 500px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
-
 .download-title { color: #007bff; margin-bottom: 5px; }
 .download-desc { color: #666; margin-bottom: 30px; }
-
 .button-group { display: flex; flex-direction: column; gap: 12px; }
 
-.btn {
-  padding: 15px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
+/* CORRECCIÓN: Limitamos tu estilo .btn SOLO a la tarjeta de descargas */
+.download-card .btn {
+  padding: 15px; border: none; border-radius: 8px;
+  color: white; font-weight: bold; font-size: 1rem;
+  cursor: pointer; text-transform: uppercase;
 }
 
 .btn-blue { background-color: #0d6efd; }

@@ -20,6 +20,7 @@ const Calculadora = () => {
     try {
       // Usamos eval de forma controlada para este ejercicio académico
       // En apps reales, se recomienda un parser de matemáticas más seguro
+      // eslint-disable-next-line no-eval
       const res = eval(input);
       setResultado(res);
     } catch (error) {

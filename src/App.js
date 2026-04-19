@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
-import './App.css';
-import MainPage from './MainPage';
-import DownloadCenter from './DownloadCenter';
+import React, { useState } from "react";
+import "./App.css";
+import Login from "./components/Login";
+import MainPage from "./components/MainPage";
+import DownloadCenter from "./components/DownloadCenter";
+import MetodologiasSW from "./components/MetodologiasSW";
 
 function App() {
-  const [view, setView] = useState('main');
+  const [view, setView] = useState("login");
 
   return (
-    <div className="App">
-      {view === 'main' ? (
-        <MainPage onNavigate={() => setView('downloads')} />
-      ) : (
-        <DownloadCenter onBack={() => setView('main')} />
+    <div className={view === "metodologias" ? "App" : "App dark-layout"}>
+      {view === "login" && <Login />}
+
+      {view === "main" && (
+        <MainPage
+          onNavigate={() => setView("downloads")}
+          onNavigateMetodologias={() => setView("metodologias")}
+        />
+      )}
+
+      {view === "downloads" && (
+        <DownloadCenter onBack={() => setView("main")} />
+      )}
+
+      {view === "metodologias" && (
+        <MetodologiasSW onBack={() => setView("main")} />
       )}
     </div>
   );

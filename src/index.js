@@ -3,15 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Componente_garcia from "./Componente_garcia";
-import Calculadora from "./Calculadora";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// Eliminados imports no usados para evitar warnings
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <App>
-    <App />
-  </App>,
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
