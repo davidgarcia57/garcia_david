@@ -5,7 +5,8 @@ import MainPage from "./components/MainPage";
 import DownloadCenter from "./components/DownloadCenter";
 import MetodologiasSW from "./components/MetodologiasSW";
 
-const GOOGLE_CLIENT_ID = "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";
+const GOOGLE_CLIENT_ID =
+  "1073441210093-8e37b3ffrljdjecl0oigu2n6htv2lhk9.apps.googleusercontent.com";
 
 function App() {
   const [view, setView] = useState("main");
