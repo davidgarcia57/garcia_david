@@ -6,7 +6,7 @@ import DownloadCenter from "./components/DownloadCenter";
 import MetodologiasSW from "./components/MetodologiasSW";
 
 function App() {
-  const [view, setView] = useState("login");
+  const [view, setView] = useState("main");
 
   return (
     <div className={view === "metodologias" ? "App" : "App dark-layout"}>
