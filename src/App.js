@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import "./App.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import DownloadCenter from "./components/DownloadCenter";
 import MetodologiasSW from "./components/MetodologiasSW";
 
+const GOOGLE_CLIENT_ID = "TU_GOOGLE_CLIENT_ID_AQUI";
+
 function App() {
   const [view, setView] = useState("main");
+  const [user, setUser] = useState(null);
 
   return (
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
     <div className={view === "metodologias" ? "App" : "App dark-layout"}>
       {view === "login" && <Login />}
 
@@ -16,6 +21,9 @@ function App() {
         <MainPage
           onNavigate={() => setView("downloads")}
           onNavigateMetodologias={() => setView("metodologias")}
+          user={user}
+          onLoginSuccess={(userData) => setUser(userData)}
+          onLogout={() => setUser(null)}
         />
       )}
 
@@ -27,6 +35,7 @@ function App() {
         <MetodologiasSW onBack={() => setView("main")} />
       )}
     </div>
+    </GoogleOAuthProvider>
   );
 }
 
